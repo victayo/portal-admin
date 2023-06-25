@@ -12,7 +12,6 @@ else
     npm run dev
 fi
 
-php artisan key:generate
 php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
