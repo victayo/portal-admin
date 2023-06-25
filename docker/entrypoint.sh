@@ -3,13 +3,13 @@
 composer install --no-progress --no-interaction
 
 npm install
-npm run dev
 
-if [ ! -f ".env" ]; then
-    echo "Creating env file for env $APP_ENV"
-    cp .env.example .env
+if [ ${APP_ENV} = "production" ]; then
+    echo "Production environment"
+    npm run prod
 else
-    echo "env file exists."
+    echo "Local Environment"
+    npm run dev
 fi
 
 php artisan key:generate
